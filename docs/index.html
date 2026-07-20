@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Encryption & Decryption Tool — a secure Java 17 desktop application using AES-256-GCM and PBKDF2-HMAC-SHA-256. Download, docs, demo, and source." />
+  <meta name="author" content="Encryption Decryption Tool" />
+  <title>Encryption &amp; Decryption Tool — Secure Java Desktop App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <!-- ===== Navbar ===== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#hero" class="brand" aria-label="Home">
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </span>
+        <span class="brand-text">Crypto<strong>Tool</strong></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="#overview">Overview</a>
+        <a href="#features">Features</a>
+        <a href="#security">Security</a>
+        <a href="#stack">Stack</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#dashboard">Try Online</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#download">Download</a>
+        <a href="#docs">Docs</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+        </button>
+        <a href="https://github.com/girishshenoy16/encryption-decryption-tool-java-gui" target="_blank" rel="noopener" class="btn btn-ghost btn-sm nav-github">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+          GitHub
+        </a>
+        <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Java 17 · Swing · AES-256-GCM</span>
+          <h1>Secure Encryption,<br/><span class="grad">built for the desktop.</span></h1>
+          <p class="lead">A modern desktop application for authenticated encryption of text and files — powered by <strong>AES-256-GCM</strong> and <strong>PBKDF2-HMAC-SHA-256</strong> (600,000 iterations). Private, local, and open source.</p>
+          <div class="hero-cta">
+            <a href="#download" class="btn btn-primary">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+              Download JAR
+            </a>
+            <a href="#demo" class="btn btn-secondary">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Watch Demo
+            </a>
+          </div>
+          <div class="hero-badges">
+            <span class="chip">AES-256-GCM</span>
+            <span class="chip">PBKDF2 600K</span>
+            <span class="chip">14 Tests Pass</span>
+            <span class="chip">MIT / Educational</span>
+          </div>
+        </div>
+        <div class="hero-art reveal" aria-hidden="true">
+          <div class="window">
+            <div class="window-bar">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="window-title">EncryptionTool — Secure</span>
+            </div>
+            <div class="window-body">
+              <div class="fake-row"><span class="k">Algorithm</span><span class="v">AES-256-GCM</span></div>
+              <div class="fake-row"><span class="k">KDF</span><span class="v">PBKDF2-HMAC-SHA-256</span></div>
+              <div class="fake-row"><span class="k">Iterations</span><span class="v">600,000</span></div>
+              <div class="fake-row"><span class="k">Salt</span><span class="v mono">a1f3…9c2e</span></div>
+              <div class="fake-row"><span class="k">IV</span><span class="v mono">7b0e…41aa</span></div>
+              <div class="lock-pill"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Authenticated &amp; tamper-proof</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-fade"></div>
+    </section>
+
+    <!-- ===== Project Overview ===== -->
+    <section class="section" id="overview">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Overview</span>
+          <h2>Project Overview</h2>
+          <p>A local-first desktop tool that turns strong cryptography into a simple, approachable experience — no cloud, no accounts, no telemetry.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+            <h3>Privacy by design</h3>
+            <p>Everything runs on your machine. Files and text never leave your computer — encryption keys are derived from your password at runtime.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2"/></svg></div>
+            <h3>Text &amp; files</h3>
+            <p>Encrypt secrets, notes, or entire files. Output is Base64-encoded and saved locally for easy sharing or archival.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h3>Authenticity</h3>
+            <p>GCM authentication tags detect tampering. A wrong password or modified ciphertext fails closed — you are alerted, not silently decrypted.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Features ===== -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Features</span>
+          <h2>Key Features</h2>
+          <p>A focused feature set built around correctness, usability, and security.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a4 4 0 0 0-4 4v3H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-2V7a4 4 0 0 0-4-4z"/></svg></div><h3>Text Encryption</h3><p>Encrypt and decrypt any text instantly with a password. Output is portable Base64.</p></article>
+          <article class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div><h3>File Encryption</h3><p>Batch-encrypt files to Base64 <code>.txt</code> outputs. Decrypt them back with the same password.</p></article>
+          <article class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div><h3>Modern Swing GUI</h3><p>Clean, centered interface with live status, file chooser, and readable results.</p></article>
+          <article class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div><h3>Non-blocking UI</h3><p>Long file operations run on a background <code>SwingWorker</code>, keeping the interface responsive.</p></article>
+          <article class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Unicode / Devanagari</h3><p>UTF-8 handling and a Devanagari-capable font let you encrypt text in any language.</p></article>
+          <article class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 5-3.5 7.5-8.5 9C7.5 19.5 4 17 4 12V6l8-3 8 3z"/></svg></div><h3>Safe by default</h3><p>12-character minimum password, random salt &amp; IV per encryption, and explicit error handling.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Security Features ===== -->
+    <section class="section section-alt" id="security">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Security</span>
+          <h2>Security Features</h2>
+          <p>Modern, standards-based cryptography — no home-grown algorithms.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card reveal">
+            <h3>AES-256-GCM</h3>
+            <p>Authenticated encryption with a 256-bit key and a 128-bit GCM tag. Provides confidentiality <em>and</em> integrity in one pass.</p>
+            <ul class="tick">
+              <li>16-byte random salt per encryption</li>
+              <li>12-byte random IV (nonce) per encryption</li>
+              <li>Detects tampering via auth tag</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <h3>PBKDF2-HMAC-SHA-256</h3>
+            <p>Password-based key derivation with <strong>600,000 iterations</strong> — aligned with current OWASP guidance — slowing brute-force attacks.</p>
+            <ul class="tick">
+              <li>Unique random salt for every operation</li>
+              <li>Derived 256-bit AES key, never stored</li>
+              <li>No plaintext password persists in memory longer than needed</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <h3>Versioned Payload</h3>
+            <p>Encrypted output carries an <code>EDT1</code> magic header, salt, IV, and ciphertext — so the tool can validate and reject malformed input.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Fail-closed design</h3>
+            <p>Wrong password, corrupted data, or tampered ciphertext raises explicit exceptions — never a silent, unsafe result.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Tech Stack ===== -->
+    <section class="section" id="stack">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Stack</span>
+          <h2>Technology Stack</h2>
+        </div>
+        <div class="stack-wrap reveal">
+          <div class="stack-item"><span class="stack-logo">☕</span><span>Java 17</span></div>
+          <div class="stack-item"><span class="stack-logo">🪟</span><span>Swing</span></div>
+          <div class="stack-item"><span class="stack-logo">📦</span><span>Maven</span></div>
+          <div class="stack-item"><span class="stack-logo">🔐</span><span>AES-256-GCM</span></div>
+          <div class="stack-item"><span class="stack-logo">🧮</span><span>PBKDF2-HMAC-SHA-256</span></div>
+          <div class="stack-item"><span class="stack-logo">✅</span><span>JUnit 5</span></div>
+          <div class="stack-item"><span class="stack-logo">🌐</span><span>HTML/CSS/JS</span></div>
+          <div class="stack-item"><span class="stack-logo">📄</span><span>GitHub Pages</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Architecture ===== -->
+    <section class="section section-alt" id="architecture">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Architecture</span>
+          <h2>Architecture</h2>
+          <p>A clean, modular Java package layout with clear separation of concerns.</p>
+        </div>
+        <div class="arch reveal">
+          <div class="arch-col">
+            <h4>main</h4><p>Application entry point</p>
+          </div>
+          <div class="arch-col">
+            <h4>gui</h4><p>Swing UI &amp; interactions</p>
+          </div>
+          <div class="arch-col">
+            <h4>crypto</h4><p>AES-GCM + PBKDF2 core</p>
+          </div>
+          <div class="arch-col">
+            <h4>service</h4><p>File encrypt/decrypt</p>
+          </div>
+          <div class="arch-col">
+            <h4>utility</h4><p>Input validation</p>
+          </div>
+          <div class="arch-col">
+            <h4>exception</h4><p>Typed error handling</p>
+          </div>
+        </div>
+        <div class="flow reveal" aria-label="Data flow">
+          <span class="flow-node">Password + Salt</span><span class="flow-arrow">→</span>
+          <span class="flow-node">PBKDF2 (600K)</span><span class="flow-arrow">→</span>
+          <span class="flow-node">AES-256 Key</span><span class="flow-arrow">→</span>
+          <span class="flow-node">AES-GCM Encrypt</span><span class="flow-arrow">→</span>
+          <span class="flow-node">EDT1 + Base64</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Workflow ===== -->
+    <section class="section" id="workflow">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Workflow</span>
+          <h2>How It Works</h2>
+        </div>
+        <ol class="steps">
+          <li class="reveal"><span class="step-num">1</span><h3>Enter password</h3><p>A strong password (12+ chars) seeds the key derivation.</p></li>
+          <li class="reveal"><span class="step-num">2</span><h3>Derive key</h3><p>PBKDF2-HMAC-SHA-256 runs 600,000 iterations with a random salt.</p></li>
+          <li class="reveal"><span class="step-num">3</span><h3>Encrypt</h3><p>AES-256-GCM encrypts your text or file with a random IV.</p></li>
+          <li class="reveal"><span class="step-num">4</span><h3>Export</h3><p>Result is wrapped in the <code>EDT1</code> format and Base64-encoded for safe storage.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Screenshots Gallery ===== -->
+    <section class="section section-alt" id="screenshots">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Gallery</span>
+          <h2>Screenshots</h2>
+        </div>
+        <div class="gallery" id="gallery">
+          <figure class="shot reveal"><img loading="lazy" src="../screenshots/gui-empty.png" alt="Application main window" /><figcaption>Main window</figcaption></figure>
+          <figure class="shot reveal"><img loading="lazy" src="../screenshots/text-encrypted.png" alt="Text encrypted result" /><figcaption>Text encrypted</figcaption></figure>
+          <figure class="shot reveal"><img loading="lazy" src="../screenshots/text-decrypted.png" alt="Text decrypted result" /><figcaption>Text decrypted</figcaption></figure>
+          <figure class="shot reveal"><img loading="lazy" src="../screenshots/file-chooser.png" alt="File chooser dialog" /><figcaption>File chooser</figcaption></figure>
+          <figure class="shot reveal"><img loading="lazy" src="../screenshots/encrypted-file.png" alt="Encrypted file output" /><figcaption>Encrypted file</figcaption></figure>
+          <figure class="shot reveal"><img loading="lazy" src="../screenshots/decrypted-file.png" alt="Decrypted file output" /><figcaption>Decrypted file</figcaption></figure>
+          <figure class="shot reveal"><img loading="lazy" src="../screenshots/wrong-password.png" alt="Wrong password error" /><figcaption>Wrong password</figcaption></figure>
+        </div>
+        <div class="lightbox" id="lightbox" aria-hidden="true"><img id="lightboxImg" src="" alt="" /><button id="lightboxClose" aria-label="Close">×</button></div>
+      </div>
+    </section>
+
+    <!-- ===== Demo Video ===== -->
+    <section class="section" id="demo">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Demo</span>
+          <h2>Demo Video</h2>
+          <p>See the tool encrypt and decrypt text and files in action.</p>
+        </div>
+        <div class="video-wrap reveal">
+          <video controls preload="metadata" poster="../screenshots/gui-empty.png">
+            <source src="https://github.com/user-attachments/assets/974185d9-b3f6-453e-a225-608ce2b0ec57" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Try It Online (Dashboard) ===== -->
+    <section class="section section-alt" id="dashboard">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Live Demo</span>
+          <h2>Try It Online</h2>
+          <p>A fully client-side encrypt / decrypt playground — powered by the browser's Web Crypto API. <strong>Nothing leaves your device.</strong></p>
+        </div>
+
+        <div class="dash reveal">
+          <div class="dash-head">
+            <div class="dash-title">
+              <span class="dash-logo" aria-hidden="true">🔐</span>
+              <div>
+                <h3>Encryption / Decryption Tool</h3>
+                <p>Browser-based AES-256-GCM · PBKDF2-HMAC-SHA-256</p>
+              </div>
+            </div>
+            <span class="algo-badge">AES-256-GCM</span>
+          </div>
+
+          <div class="tabs" role="tablist">
+            <button class="tab-btn active" data-tab="d-encrypt" role="tab">🔒 Encrypt</button>
+            <button class="tab-btn" data-tab="d-decrypt" role="tab">🔓 Decrypt</button>
+            <button class="tab-btn" data-tab="d-about" role="tab">ℹ️ About</button>
+          </div>
+
+          <!-- Encrypt -->
+          <div class="dash-panel" id="d-encrypt">
+            <div class="card dash-card">
+              <div class="section-title">Encrypt Text</div>
+              <div class="form-group">
+                <label>Plaintext</label>
+                <textarea id="enc-input" rows="5" placeholder="Enter your secret text here..."></textarea>
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <div class="password-wrap">
+                  <input type="password" id="enc-pass" placeholder="Enter a strong password (12+ characters)" />
+                  <button class="toggle-pass" type="button" data-target="enc-pass" aria-label="Show password">👁</button>
+                </div>
+                <div class="strength-bar-bg"><div class="strength-bar" id="enc-strength-bar"></div></div>
+                <div class="strength-label" id="enc-strength-label"></div>
+              </div>
+              <div class="btn-row">
+                <button class="btn btn-encrypt" id="enc-btn" type="button">🔒 Encrypt</button>
+                <button class="btn btn-copy" type="button" data-copy="enc-result-text">📋 Copy</button>
+                <button class="btn btn-clear" type="button" data-clear="enc">🗑️ Clear</button>
+              </div>
+              <div class="result-box result-success" id="enc-result">
+                <div class="result-label ok">✅ Encrypted Output (Base64)</div>
+                <div class="result-text" id="enc-result-text"></div>
+              </div>
+              <div class="result-box result-error" id="enc-error">
+                <div class="result-label err">❌ Error</div>
+                <div class="result-text" id="enc-error-text"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Decrypt -->
+          <div class="dash-panel" id="d-decrypt" hidden>
+            <div class="card dash-card">
+              <div class="section-title">Decrypt Text</div>
+              <div class="form-group">
+                <label>Ciphertext (Base64)</label>
+                <textarea id="dec-input" rows="5" placeholder="Paste your encrypted Base64 text here..."></textarea>
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <div class="password-wrap">
+                  <input type="password" id="dec-pass" placeholder="Enter the decryption password" />
+                  <button class="toggle-pass" type="button" data-target="dec-pass" aria-label="Show password">👁</button>
+                </div>
+              </div>
+              <div class="btn-row">
+                <button class="btn btn-decrypt" id="dec-btn" type="button">🔓 Decrypt</button>
+                <button class="btn btn-copy" type="button" data-copy="dec-result-text">📋 Copy</button>
+                <button class="btn btn-clear" type="button" data-clear="dec">🗑️ Clear</button>
+              </div>
+              <div class="result-box result-success" id="dec-result">
+                <div class="result-label ok">✅ Decrypted Plaintext</div>
+                <div class="result-text" id="dec-result-text"></div>
+              </div>
+              <div class="result-box result-error" id="dec-error">
+                <div class="result-label err">❌ Error</div>
+                <div class="result-text" id="dec-error-text"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- About -->
+          <div class="dash-panel" id="d-about" hidden>
+            <div class="card dash-card">
+              <div class="section-title">How This Tool Works</div>
+              <div class="info-grid">
+                <div class="info-box"><div class="icon">🔐</div><div class="name">Algorithm</div><div class="val">AES-256-GCM</div></div>
+                <div class="info-box"><div class="icon">🔑</div><div class="name">Key Derivation</div><div class="val">PBKDF2-HMAC-SHA-256</div></div>
+                <div class="info-box"><div class="icon">🔄</div><div class="name">Iterations</div><div class="val">600,000</div></div>
+                <div class="info-box"><div class="icon">🎲</div><div class="name">Salt</div><div class="val">16 bytes (random)</div></div>
+                <div class="info-box"><div class="icon">📦</div><div class="name">IV</div><div class="val">12 bytes (random)</div></div>
+                <div class="info-box"><div class="icon">✅</div><div class="name">Auth Tag</div><div class="val">128-bit GCM tag</div></div>
+              </div>
+              <div class="about-note">
+                <b>Payload format:</b> <code>EDT1 | version | salt(16) | iv(12) | ciphertext+tag</code>, then Base64.<br><br>
+                ✅ Salt and IV are randomly generated for every encryption<br>
+                ✅ GCM detects tampering — wrong password = authentication failure<br>
+                ✅ All processing happens locally in your browser<br>
+                ⚠️ For educational and personal use only
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="dash-foot reveal">This in-browser tool mirrors the Java desktop app's security model. For files and a packaged executable, use the <a href="#download">Download</a> section.</p>
+      </div>
+    </section>
+
+    <!-- ===== Download ===== -->
+    <section class="section section-alt" id="download">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Get it</span>
+          <h2>Download Application</h2>
+          <p>Runs locally on any machine with Java 17+.</p>
+        </div>
+        <div class="download-card reveal">
+          <div class="dl-info">
+            <h3>Encryption &amp; Decryption Tool</h3>
+            <p>Packaged executable JAR · ~Java 17 required · Cross-platform (Windows, macOS, Linux)</p>
+          </div>
+          <div class="dl-actions">
+            <a href="https://github.com/girishshenoy16/encryption-decryption-tool-java-gui" target="_blank" rel="noopener" class="btn btn-primary">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+              Download JAR
+            </a>
+            <a href="#docs" class="btn btn-secondary">Build from source</a>
+          </div>
+        </div>
+        <div class="note reveal"><strong>Note:</strong> The Java desktop app does not run inside GitHub Pages. This website is informational — download the JAR and run it on your computer.</div>
+      </div>
+    </section>
+
+    <!-- ===== Documentation ===== -->
+    <section class="section" id="docs">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Docs</span>
+          <h2>Documentation</h2>
+        </div>
+        <div class="grid-3">
+          <a class="card doc-card reveal" href="https://github.com/girishshenoy16/encryption-decryption-tool-java-gui" target="_blank" rel="noopener">
+            <div class="card-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+            <h3>README</h3><p>Full project guide on GitHub.</p>
+          </a>
+          <a class="card doc-card reveal" href="../reports/project-report.md">
+            <div class="card-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg></div>
+            <h3>Project Report</h3><p>Phases, diagrams, and analysis.</p>
+          </a>
+          <a class="card doc-card reveal" href="#stack">
+            <div class="card-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
+            <h3>How to run</h3><p>Clone, build with Maven, run the JAR.</p>
+          </a>
+        </div>
+        <div class="run-steps reveal">
+          <pre><code># Clone the repository
+git clone https://github.com/girishshenoy16/encryption-decryption-tool-java-gui.git
+cd encryption-decryption-tool-java-gui
+
+# Build the executable JAR
+mvn clean package
+
+# Run the application
+java -jar target/encryption-decryption-tool-1.0.jar</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GitHub Repository ===== -->
+    <section class="section section-alt" id="github">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Source</span>
+          <h2>GitHub Repository</h2>
+        </div>
+        <div class="repo-card reveal">
+          <div class="repo-meta">
+            <span class="repo-lang"><span class="lang-dot"></span>Java</span>
+            <span>⭐ Star the project</span>
+            <span>🍴 Fork &amp; contribute</span>
+            <span>📄 Educational License</span>
+          </div>
+          <a href="https://github.com/girishshenoy16/encryption-decryption-tool-java-gui" target="_blank" rel="noopener" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+            Open Repository
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== About Developer ===== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">About</span>
+          <h2>About the Developer</h2>
+        </div>
+        <div class="about-card reveal">
+          <div class="avatar" aria-hidden="true">ED</div>
+          <div class="about-body">
+            <h3>Encryption Decryption Tool</h3>
+            <p>This project was built as a hands-on exploration of secure software development — combining cryptographic theory with a real, usable desktop application. It reflects a commitment to clean architecture, tested code, and privacy-respecting design.</p>
+            <div class="about-tags"><span class="chip">Java</span><span class="chip">Cryptography</span><span class="chip">Swing</span><span class="chip">Security</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section section-alt" id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">FAQ</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq reveal">
+          <details><summary>Is my data sent to any server?</summary><p>No. All encryption and decryption happens locally on your machine. Nothing is uploaded.</p></details>
+          <details><summary>What algorithm is used?</summary><p>AES-256-GCM for authenticated encryption, with keys derived via PBKDF2-HMAC-SHA-256 at 600,000 iterations.</p></details>
+          <details><summary>What if I forget my password?</summary><p>Encryption is keyed solely from your password. There is no recovery mechanism by design — this is what keeps it secure.</p></details>
+          <details><summary>Which platforms are supported?</summary><p>Any desktop OS with Java 17 or newer (Windows, macOS, Linux).</p></details>
+          <details><summary>Does the website run the Java app?</summary><p>No. GitHub Pages hosts this informational site only. Download the JAR to run the application locally.</p></details>
+          <details><summary>Is the code tested?</summary><p>Yes — 14 JUnit tests cover the crypto and file-service layers.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer / Contact ===== -->
+  <footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="brand-text">Crypto<strong>Tool</strong></span>
+        <p>Secure, local-first encryption for text and files.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#overview">Overview</a>
+        <a href="#features">Features</a>
+        <a href="#security">Security</a>
+        <a href="#download">Download</a>
+        <a href="https://github.com/girishshenoy16/encryption-decryption-tool-java-gui" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-cta">
+        <a href="https://github.com/girishshenoy16/encryption-decryption-tool-java-gui" target="_blank" rel="noopener" class="btn btn-primary btn-sm">View Source</a>
+        <a href="#download" class="btn btn-secondary btn-sm">Download</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Encryption &amp; Decryption Tool. Built with Java &amp; ❤️.</span>
+      <span>Licensed for educational use.</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

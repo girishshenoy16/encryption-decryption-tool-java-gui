@@ -1,0 +1,59 @@
+# Build output
+target/
+out/
+build/
+*.class
+
+# Maven
+.mvn/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+# IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.project
+.classpath
+.settings/
+*.swp
+*.iml.bak
+
+# Logs
+*.log
+logs/
+
+# OS junk
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Generated encrypted / decrypted / output artifacts (keep folder placeholders)
+encrypted_files/*
+!encrypted_files/.gitkeep
+decrypted_files/*
+!decrypted_files/.gitkeep
+outputs/*
+!outputs/.gitkeep
+sample_files/*.enc
+
+# Screenshots (keep folder placeholder, images tracked separately)
+screenshots/*
+!screenshots/.gitkeep
+
+# Planning documents (not part of the shipped source)
+implementation_plan.md
+tasks.md
+
+# AI agent / tool state folders
+.agents/
+.codex/

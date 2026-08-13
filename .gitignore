@@ -46,9 +46,11 @@ outputs/*
 !outputs/.gitkeep
 sample_files/*.enc
 
-# Screenshots (keep folder placeholder, images tracked separately)
+# Screenshots (keep folder placeholder and images)
 screenshots/*
 !screenshots/.gitkeep
+!screenshots/*.png
+!screenshots/landing_page.png
 
 # Planning documents (not part of the shipped source)
 implementation_plan.md

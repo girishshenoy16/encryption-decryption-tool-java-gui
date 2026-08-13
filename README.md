@@ -25,7 +25,10 @@
 
 **[Live Website](https://girishshenoy16.github.io/encryption-decryption-tool-java-gui/)**
 
+
 ![Landing Page](screenshots/landing_page.png)
+
+---
 
 ### 🎬 Demo Video
 
